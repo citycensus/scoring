@@ -18,7 +18,34 @@ The dataset score consists of the following:
 Each dataset is assigned a score. The perfect score for a dataset is 3.   
 The sum of all dataset scores is divided by the number of datasets to get the resulting score  
 
-_Example_
+#### Detail Dataset Score
+Each dataset is scored by three criteria:
+- License
+- Format
+- Update time
+
+##### License
+If the dataset has an open license it gets 1 point. Otherwise 0
+
+##### Format
+If the dataset has resources with an open and machine readable format it gets 1 point.
+For just open or machine readable it gets 0.5 points.
+Otherwise 0 points.
+
+##### Update time
+If the dataset was updated in the last 7 days it gets 1 point.
+If it was updated in the last 30 days it gets 0.5 points.
+Otherwise 0 points.
+
+**Example**  
+*Dataset 1:*  
+Open License, Machine Readable, Updated 3 days ago  
+Points: 1+0.5+1 = 2.5
+
+*Dataset 2:*  
+Closed License, Machine Readable + Open Format, Updated 32 days ago  
+Points: 0+1+0.5 = 1.5
+
 
 10 Datasets with a perfect score of 3 would result in a score if 3 (10\*3/10)
 
