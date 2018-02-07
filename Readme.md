@@ -12,6 +12,22 @@
 The standardized ranks are multiplied by their respective weight which then results in the overall score. These scores are then ranked again.
 The lower the score the better the city is performing.
 
+__Example:__  
+
+|Score|City 1|City 2|
+|----|:---:|:---:|
+|Dataset Score Rank|1|2|
+|Category Rank|1|2|
+|Category Variance Rank|1|2|
+|Datastes Rank|1|2|
+|Formats Rank|1|2|
+|Last Update Rank|1|2|
+|Category rank|1|2|
+|Weighted Score|0.4\*1 + 0.2\*1 +0.15\*1 +0.1\*1 +0.05\*1 +0.05\*1 +0.05\*1 = **1**|0.4\*2 + 0.2\*2 +0.15\*2 +0.1\*2 +0.05\*2 +0.05\*2 +0.05\*2 = **2**|
+|Resulting Rank|1|2|
+
+
+
 ### Dataset Score
 
 The dataset score consists of the following:  
@@ -38,13 +54,11 @@ If it was updated in the last 30 days it gets 0.5 points.
 Otherwise 0 points.
 
 **Example**  
-*Dataset 1:*  
-Open License, Machine Readable, Updated 3 days ago  
-Points: 1+0.5+1 = 2.5
 
-*Dataset 2:*  
-Closed License, Machine Readable + Open Format, Updated 32 days ago  
-Points: 0+1+0.5 = 1.5
+|Score|License|Format|Updated|Result|
+|----|:---:|:---:|----|
+|Dataset 1|Open = **1** |Machine Readable = 0.5|3 days ago = 1|1+0.5+1 = **2.5**|
+|Dataset 2|Closed License = **0**|Machine Readable + Open Format = **1** | Updated 32 days ago = **0.5**|0+1+0.5 = **1.5**|
 
 
 10 Datasets with a perfect score of 3 would result in a score if 3 (10\*3/10)
