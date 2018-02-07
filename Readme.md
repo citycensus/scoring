@@ -9,6 +9,9 @@
 5% Standardized last update rank  
 5 % Standardized category rank  
 
+The standardized ranks are multiplied by their respective weight which then results in the overall score. These scores are then ranked again.
+The lower the score the better the city is performing.
+
 ### Dataset Score
 
 The dataset score consists of the following:  
@@ -23,30 +26,30 @@ Afterwards all dataset scores are rank among all cities. So the city with the be
 
 ### Category Score
 
-The catagory score is a score of maximum 1 one. 1 point is awared if the city has a dataset in each category. 0,5 point if a dataset in at least half of the categories exists. 
+The category score is a score of maximum 1 one. 1 point is awarded if the city has a dataset in each category. 0,5 point if a dataset in at least half of the categories exists.
 
 ### Category Variance Score
 
-This score computes the variance for the amount of datasets per category. If a city has a lot of datasets in just one category a low variance is the result and vice versa. A low variance is what we score highest. 
+This score computes the variance for the amount of datasets per category. If a city has a lot of datasets in just one category a low variance is the result and vice versa. A low variance is what we score highest.
 
 ### Dataset Score
 
-The more datset the city has the higher the score and the rank.
+The more datasets the city has, the higher the score and the rank.
 
 ### Formats Rank
 
 The more formats the more points and rank.
 
 ### Standardization
-Each rank is standadized.  
+Each rank is standardized.  
 The place is divided by the maximum rank (ties are allowed) and multiplied by 100.
 
 _Example_
 
 Rank: 1  
 Max Rank: 100  
-Standadized Rank: 1  
+Standardized Rank: 1  
 
 Rank: 10  
 Max Rank: 80  
-Resulting Rank: 12,5  
+Standardized Rank: 12,5  
