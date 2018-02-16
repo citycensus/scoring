@@ -1,96 +1,94 @@
 # Scoring
 
-## Overall Rank
-40% Standardized Dataset Score Rank  
-20 % Standardized Category Rank  
-15 % Standardized Category Variance Rank  
-10% Standardized Dataset Rank  
-5 % Standardized Formats Rank  
-5% Standardized last update rank  
-5 % Standardized category rank  
+## Gesamtbewertung
 
-The standardized ranks are multiplied by their respective weight which then results in the overall score. These scores are then ranked again.
-The lower the score the better the city is performing.
+40% Standardisierter Datensatz Rang  
+20 % Standardisierter Kategorie Rang  
+15 % Standardisierter Kategorie Varianz Rang  
+10% Standardisierter Datenanzahl Rang  
+5 % Standardisierter Formate Rang  
+5% Standardisierter Letztes Update Rang  
+5 % Standardisierter Kategorie Rang  
 
-__Example:__  
 
-|Score|City 1|City 2|
+__Beispiel:__  
+
+||Stadt 1|Stadt 2|
 |----|:---:|:---:|
-|Dataset Score Rank|1|2|
-|Category Rank|1|2|
-|Category Variance Rank|1|2|
-|Datastes Rank|1|2|
-|Formats Rank|1|2|
-|Last Update Rank|1|2|
-|Category rank|1|2|
-|Weighted Score|0.4\*1 + 0.2\*1 +0.15\*1 +0.1\*1 +0.05\*1 +0.05\*1 +0.05\*1 = **1**|0.4\*2 + 0.2\*2 +0.15\*2 +0.1\*2 +0.05\*2 +0.05\*2 +0.05\*2 = **2**|
-|Resulting Rank|1|2|
+|Standardisierter Datensatz Rank|1|2|
+|Standardisierter Kategorie Rank|1|2|
+|Standardisierter Kategorie Varianz Rank|1|2|
+|Standardisierter Datenanzahl Rank|1|2|
+|Standardisierter Formate Rank|1|2|
+|Standardisierter Letztes Update Rank|1|2|
+|Standardisierter Kategorie Rank|1|2|
+|Gewichtete Punktzahl|0.4\*1 + 0.2\*1 +0.15\*1 +0.1\*1 +0.05\*1 +0.05\*1 +0.05\*1 = **1**|0.4\*2 + 0.2\*2 +0.15\*2 +0.1\*2 +0.05\*2 +0.05\*2 +0.05\*2 = **2**|
+|Resultierender Rank|1|2|
 
 
 
-### Dataset Score
+### Datensatz
 
-The dataset score consists of the following:  
-Each dataset is assigned a score. The perfect score for a dataset is 3.   
-The sum of all dataset scores is divided by the number of datasets to get the resulting score  
+Jeder Datensatz wird eigenständig bewerted. Die Bewertung setzt sich folgendermaßen zusammen:
+Maximal zu erreichende Punkzahl für einen Datensatz: 3.
+Am Ende wird das arithmetische Mittel der Datensätze genommen für die Punktzahl.
 
-#### Detail Dataset Score
-Each dataset is scored by three criteria:
-- License
+
+#### Detailierte Datensatz Punktzahl
+Jeder Datensatz wird nach drei Kriterien bewertet:
+- Lizenz
 - Format
-- Update time
+- Letztes Update
 
-##### License
-If the dataset has an open license it gets 1 point. Otherwise 0
+##### Lizenz
+Hat der Datensatz eine Offene Lizenz so erhält dieser 1 Punkt. Andernfalls 0 Punkte.
 
 ##### Format
-If the dataset has resources with an open and machine readable format it gets 1 point.
-For just open or machine readable it gets 0.5 points.
-Otherwise 0 points.
+Wenn der Datensatz Resourcen hat, die maschinenlesbar und offen sind, erhählt der Datensatz 1 Punkt.
+Wenn er entweder maschinenlesbar oder offene Formate hat nur einen halben Punkt.
+Sonst 0 Punkte.
 
-##### Update time
-If the dataset was updated in the last 7 days it gets 1 point.
-If it was updated in the last 30 days it gets 0.5 points.
-Otherwise 0 points.
+##### Letztes Update
+Wurde der Datensatz in den letzten 7 Tagen verändert erhält dieser 1 Punkt.
+In den letzten 30 Tagen resultiert in 0,5 Punkten.
+Ansonsten 0 Punkte.
 
 **Example**  
 
-|Score|License|Format|Updated|Result|
+|Punktzahl|Lizenz|Format|Update|Resultat|
 |----|:---:|:---:|----|
-|Dataset 1|Open = **1** |Machine Readable = 0.5|3 days ago = 1|1+0.5+1 = **2.5**|
-|Dataset 2|Closed License = **0**|Machine Readable + Open Format = **1** | Updated 32 days ago = **0.5**|0+1+0.5 = **1.5**|
+|Dataset 1|Offen = **1** |maschinenlesbar = 0.5|vor 3 Tagen = 1|1+0.5+1 = **2.5**|
+|Dataset 2|Nicht-offene Lizenz = **0**|maschinenlesbar und offens Format = **1** | vor 32 Tagen = **0.5**|0+1+0.5 = **1.5**|
 
 
-10 Datasets with a perfect score of 3 would result in a score if 3 (10\*3/10)
+### Kategorie
 
-Afterwards all dataset scores are rank among all cities. So the city with the best score is in 1st place and so forth.
+Die maximal erreichbare Punktzahl bei der Bewertung der Kategorie ist 1.
+1 Punkt kann erreicht werden, wenn die Stadt in jeder Kategorie mind einen Datensatz hat. 0,5 Punkte, wenn die Stadt in mind der Hälfte der Kategorien mind. einen Datensatz hat. Sonst 0 Punkte.
 
-### Category Score
+### Varianz der Kategorien
 
-The category score is a score of maximum 1 one. 1 point is awarded if the city has a dataset in each category. 0,5 point if a dataset in at least half of the categories exists.
+Die Varianz misst die Streuung der Datensätze je Kategorien. Als Grundlage wird die Anzahl Datensätze je Kategorie genommen. Je höher die Varianz um so mehr Datesätze sind in nur wenigen Kategorien. Je gleichverteilter die Datensätze je Kategorie umso geringer ist die Varianz.
+Eine niedrige Varianz wird hier hoch bewertet.
 
-### Category Variance Score
+### Datenanzahl
 
-This score computes the variance for the amount of datasets per category. If a city has a lot of datasets in just one category a low variance is the result and vice versa. A low variance is what we score highest.
+Je mehr Datensätze eine Stadt hat, umso höher ist der Rang in dieser Bewertung.
 
-### Dataset Score
+### Anzahl Formate
 
-The more datasets the city has, the higher the score and the rank.
+Je mehr verschiedene Formate eine Stadt hat, umso höher ist der Rang in dieser Bewertung.
 
-### Formats Rank
+### Standardisierung
+Jede resultierender Rang einer Bewertung wird standardisiert.  
+Der Rang wird durch den maximal erreichbanren Rang geteilt und mit 100 multipliziert.
 
-The more formats the more points and rank.
+_Beispiel_
 
-### Standardization
-Each rank is standardized.  
-The place is divided by the maximum rank (ties are allowed) and multiplied by 100.
+Rang: 1  
+Max Rang: 100  
+Standardisierter Rang: 1  
 
-_Example_
-
-Rank: 1  
-Max Rank: 100  
-Standardized Rank: 1  
-
-Rank: 10  
-Max Rank: 80  
-Standardized Rank: 12,5  
+Rang: 10  
+Max Rang: 80  
+Standardisierter Rang: 12,5  
